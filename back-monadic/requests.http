@@ -1,0 +1,26 @@
+
+
+###
+GET http://localhost:3000/api/users HTTP/1.1
+
+###
+POST http://localhost:3000/api/createUser HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Crear applciacion",
+    "fecha": "2020-11-26",
+    "estatus": "pendiente"
+}
+###
+PUT  http://localhost:3000/api/updateUser/63393fb3b392d1a200371bd3  HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Crear applicacion",
+    "fecha": "2020-11-26",
+    "estatus": "completado"
+}
+
+###
+DELETE http://localhost:3000/api/deleteUser/63393fb3b392d1a200371bd3 HTTP/1.1
