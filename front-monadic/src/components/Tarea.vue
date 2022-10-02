@@ -90,7 +90,7 @@ export default {
       { text: 'Estatus', value: 'estatus' },
       { text: 'Actions', value: 'actions', sortable: false },
     ],
-    items: ['Pendiente', 'Completado'],
+    items: ['pendiente', 'completado'],
     valid: false,
     usuarios: [],
     editedIndex: -1,
@@ -154,7 +154,7 @@ export default {
     updateStatusItem(item) {
       this.editedIndex = this.usuarios.indexOf(item);
       this.editedItem = Object.assign({}, item);
-      const nuevoEstatus = this.editedItem.estatus === 'Pendiente' ? 'Completado' : 'Pendiente';
+      const nuevoEstatus = this.editedItem.estatus === 'pendiente' ? 'completado' : 'pendiente';
       axios
         .put(
           this.url + '/updateUser/' + this.editedItem._id,
@@ -332,7 +332,7 @@ export default {
     },
 
     getColor(estatus) {
-      return estatus === 'Pendiente' ? 'orange' : 'green';
+      return estatus === 'pendiente' ? 'orange' : 'green';
     },
   },
 };
